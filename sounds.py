@@ -3,7 +3,7 @@ from pathlib import Path
 from PyQt6.QtCore import QUrl, QElapsedTimer
 from PyQt6.QtMultimedia import QSoundEffect, QMediaPlayer, QAudioOutput
 
-_DIR = Path(__file__).parent / "sounds"
+_DIR = Path(__file__).parent / "assets"
 _fx = {}
 _music = {}
 

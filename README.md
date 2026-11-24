@@ -13,12 +13,14 @@ python SpaceInvader-modified.py
 
 Controls: Left/Right to move, Up to shoot, Esc to quit.
 
-
-
 ## AI Disclosure
 
-- Sounds/ and sounds.py were generated.
+- Sounds in assets/ and sounds.py were generated.
 
 - The SFX and BGM were generated.
 
 - Parts of `SpaceInvader-modified.py` were AI-generated however it was vastly handmade.
+
+
+
+![](uml.png)

@@ -275,6 +275,7 @@ class GameView(QWidget):
         
         self.world = world
         self.game = None
+        self.background = QPixmap()
         self.setFixedSize(1000, 700)
         self.setWindowTitle(
             "Ultra overlords of coding supremacy - Invade the World"
@@ -283,9 +284,9 @@ class GameView(QWidget):
             Qt.FocusPolicy.StrongFocus
         )
 
-        self.background = QPixmap(
-            str(Path(__file__).with_name("BG.png"))
-        )
+        # self.background = QPixmap(
+        #     str(Path(__file__).with_name("BG.png"))
+        # )
 
         # start button
         self.start_button = QPushButton("START GAME",self)
@@ -499,15 +500,15 @@ class Game:
 
 def main():
     app = QApplication(sys.argv)
-    Enemy.sprite = QPixmap(str(Path(__file__).with_name("bug.png")))
+    Enemy.sprite = QPixmap(str(Path(__file__).parent / "assets" / "bug.png"))
     if Enemy.sprite.isNull():
-        raise FileNotFoundError("Could not load bug.png")
-    Boss.sprite = QPixmap(str(Path(__file__).with_name("boss.png")))
+        raise FileNotFoundError("Could not load assets/bug.png")
+    Boss.sprite = QPixmap(str(Path(__file__).parent / "assets" / "boss.png"))
     if Boss.sprite.isNull():
-        raise FileNotFoundError("Could not load boss.png")
-    Player.sprite = QPixmap(str(Path(__file__).with_name("player.jpeg")))
+        raise FileNotFoundError("Could not load assets/boss.png")
+    Player.sprite = QPixmap(str(Path(__file__).parent / "assets" / "player.jpeg"))
     if Player.sprite.isNull():
-        raise FileNotFoundError("Could not load player.jpeg")
+        raise FileNotFoundError("Could not load assets/player.jpeg")
 
     world = World()
     view = GameView(world)
@@ -545,7 +546,6 @@ if __name__ == "__main__":
 # To do:
 # - Fix menu, allow to view high score
 # - multiplayer (QTThreads with optional sockets)
-# - Add sound effects
 # - Customised QWidgets
 #  
 # Menu
@@ -556,6 +556,7 @@ if __name__ == "__main__":
 
 
 # DONE: 
+# - enemy shoot back = Wyatt
 # - different enemy formations
 # - Boss enemy - Wyatt
 # - Lose and Win condition - Resham
@@ -573,6 +574,8 @@ if __name__ == "__main__":
 # - Make enemies move down - resham
 # - simplified UML - Jonah (diagrams.net)
 # - added score counter - George
+# - Add sound effects - Jonah
+
 
 
 # test 
